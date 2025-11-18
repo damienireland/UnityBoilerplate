@@ -4,12 +4,27 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public void OnTriggerStay2D(Collider2D other)
+    int health = 15;
+
+    public void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Enemy"))
+        if (other.CompareTag("DD1"))
+        {
+            Destroy(other.gameObject);
+            health -= Random.Range(3, 5);
+        }
+        else if (other.CompareTag("FB1"))
+        {
+            Destroy(other.gameObject);
+            health -= Random.Range(4, 8);
+        }
+    }
+
+    void Update()
+    {
+        if (health <= 0)
         {
             Destroy(this.gameObject);
         }
     }
-
-}
+ }

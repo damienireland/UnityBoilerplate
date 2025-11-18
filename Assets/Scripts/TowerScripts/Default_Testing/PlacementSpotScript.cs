@@ -6,7 +6,7 @@ public class TowerScript : MonoBehaviour
 {
 
     //public Tower TowerPrefab;
-    public GameObject BlockPrefab;
+    public GameObject BasicMenu;
     public Tower TowerPrefab;
     private Canvas canvas;
 
@@ -29,7 +29,7 @@ public class TowerScript : MonoBehaviour
         //Debug.Log("Tower clicked!");
 
         
-        var elem = Instantiate(BlockPrefab, canvas.transform);
+        var elem = Instantiate(BasicMenu, canvas.transform);
         // move the menu to be near the tower
         elem.transform.position = transform.position;
 
