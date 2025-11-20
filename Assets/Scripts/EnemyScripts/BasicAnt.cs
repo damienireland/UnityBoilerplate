@@ -27,15 +27,15 @@ public class Movement : MonoBehaviour
     private void Start()
     {
        Debug.Log("Enemy spawned");
-        if (position.position.y >= -18f && position.position.y < -17f)
+        if (position.position.y >=8)
         {
             path = GameObject.Find("Path1Waypoints").GetComponent<Path>();
         }
-        else if (position.position.y >= -19f && position.position.y < -18f)
+        else if (position.position.y >6 && position.position.y <8)
         {
             path = GameObject.Find("Path2Waypoints").GetComponent<Path>();
         }
-        else if (position.position.y >= -20f && position.position.y < -19f)
+        else if (position.position.y <=6)
         {
             path = GameObject.Find("Path3Waypoints").GetComponent<Path>();
         }

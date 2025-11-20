@@ -54,11 +54,11 @@ public class WaveManager : MonoBehaviour
             {
                 int path = Random.Range(1, 4);
                 if (path == 1)
-                    Instantiate(basicAnt, new Vector3(-8.5f, -18f, 0), Quaternion.identity);
+                    Instantiate(basicAnt, new Vector3(-36.7f, 8f, 0), Quaternion.identity);
                 else if (path == 2)
-                    Instantiate(basicAnt, new Vector3(-8.5f, -19f, 0), Quaternion.identity);
+                    Instantiate(basicAnt, new Vector3(-36.7f, 7f, 0), Quaternion.identity);
                 else
-                    Instantiate(basicAnt, new Vector3(-8.5f, -20f, 0), Quaternion.identity);
+                    Instantiate(basicAnt, new Vector3(-36.7f, 6f, 0), Quaternion.identity);
 
 
 
