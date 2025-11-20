@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    int health = 15;
+    int health = 25;
 
     public void OnTriggerEnter2D(Collider2D other)
     {

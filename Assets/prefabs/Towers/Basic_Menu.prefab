@@ -297,12 +297,12 @@ RectTransform:
   m_GameObject: {fileID: 4339489126894395986}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1521548521280298114}
-  - {fileID: 7502899496915449890}
   - {fileID: 4751994511729470941}
+  - {fileID: 7502899496915449890}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -360,6 +360,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 749ca3eebf7db0740bc5cbfbceb1a6f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  towerReference: {fileID: 0}
 --- !u!50 &6956632162574319723
 Rigidbody2D:
   serializedVersion: 4
@@ -399,6 +400,7 @@ GameObject:
   - component: {fileID: 8810887213786214729}
   - component: {fileID: 6747802402588872562}
   - component: {fileID: 7649086556734177222}
+  - component: {fileID: 8840746488732389061}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -508,18 +510,32 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
+      - m_Target: {fileID: 8840746488732389061}
+        m_TargetAssemblyTypeName: Spawn_Stick, Assembly-CSharp
+        m_MethodName: OnButtonPressed
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &8840746488732389061
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5685644230145198790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2999b416316268d4a829909b734498b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  StickLv1: {fileID: 3030286997739445882, guid: 6d94dcbe0e30ff148b31f0f191279b31, type: 3}
+  Basic_Menu: {fileID: 4339489126894395986}
 --- !u!1 &5771176203411140807
 GameObject:
   m_ObjectHideFlags: 0
@@ -585,7 +601,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Close Menu
+  m_text: DO NOT CLICK, BUTTON NEEDS RE-PROGRAMMING!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -612,8 +628,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 8
+  m_fontSizeBase: 8
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -666,6 +682,7 @@ GameObject:
   - component: {fileID: 2424157555405370016}
   - component: {fileID: 7256450016948910404}
   - component: {fileID: 1551809113699648265}
+  - component: {fileID: 5810293886625453645}
   m_Layer: 5
   m_Name: Button (2)
   m_TagString: Untagged
@@ -774,7 +791,34 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7256450016948910404}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5810293886625453645}
+        m_TargetAssemblyTypeName: Spawn_Dragon, Assembly-CSharp
+        m_MethodName: OnButtonPressed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &5810293886625453645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6704723930620569719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bff978e3b5f63449a12130ef54d5989, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DragonLv1: {fileID: 1081462637903087748, guid: 06b6291dd3a3cd54f997450cdd8863f3, type: 3}
+  PlacementSpot: {fileID: 1825766343717984304, guid: ddc0b261dac353a4687d9f63183c224c, type: 3}
+  Basic_Menu: {fileID: 4339489126894395986}
 --- !u!1 &8949980033653852879
 GameObject:
   m_ObjectHideFlags: 0
@@ -787,6 +831,7 @@ GameObject:
   - component: {fileID: 1723705058771723294}
   - component: {fileID: 2292060249726590406}
   - component: {fileID: 8446907833328007750}
+  - component: {fileID: 2282562022906727201}
   m_Layer: 5
   m_Name: Button (1)
   m_TagString: Untagged
@@ -895,4 +940,31 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2292060249726590406}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2282562022906727201}
+        m_TargetAssemblyTypeName: Close_menu, Assembly-CSharp
+        m_MethodName: OnButtonPressed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &2282562022906727201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8949980033653852879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63cd09cf4899509409f3aea2f36ada67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  PlacementSpot: {fileID: 1825766343717984304, guid: ddc0b261dac353a4687d9f63183c224c, type: 3}
+  Basic_Menu: {fileID: 4339489126894395986}
+  targetObject: {fileID: 459951726106560496}

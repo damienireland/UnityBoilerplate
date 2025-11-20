@@ -26,7 +26,7 @@ public class Movement : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-       Debug.Log("Enemy spawned");
+       //Debug.Log("Enemy spawned");
         if (position.position.y >=8)
         {
             path = GameObject.Find("Path1Waypoints").GetComponent<Path>();
